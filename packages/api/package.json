@@ -1,0 +1,21 @@
+{
+  "name": "@gotchai/api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "axios": "catalog:",
+    "@tanstack/react-query": "catalog:"
+  },
+  "devDependencies": {
+    "@gotchai/eslint-config": "workspace:*",
+    "@gotchai/typescript-config": "workspace:*",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19",
+    "typescript": "catalog:"
+  }
+}
