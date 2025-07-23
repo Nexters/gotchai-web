@@ -1,27 +1,21 @@
 {
-  "name": "@gotchai/web",
+  "name": "@gotchai/api",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "index.ts",
   "scripts": {
-    "dev": "vite --clearScreen false",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
     "lint": "eslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "@gotchai/ui": "workspace:*",
-    "react": "catalog:react19",
-    "react-dom": "catalog:react19"
+    "axios": "catalog:",
+    "@tanstack/react-query": "catalog:"
   },
   "devDependencies": {
     "@gotchai/eslint-config": "workspace:*",
     "@gotchai/typescript-config": "workspace:*",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
-    "@vitejs/plugin-react": "catalog:",
-    "eslint": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:"
+    "typescript": "catalog:"
   }
 }

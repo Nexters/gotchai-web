@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@gotchai/ui",
   "version": "0.0.0",
   "exports": {
     ".": "./index.ts",
@@ -11,16 +11,19 @@
   "scripts": {
     "lint": "eslint \"**/*.ts\""
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "peerDependencies": {
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19"
   },
   "devDependencies": {
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.2",
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "eslint": "^8.57.0",
-    "typescript": "5.5.4"
+    "@gotchai/eslint-config": "workspace:*",
+    "@gotchai/typescript-config": "workspace:*",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19",
+    "@vanilla-extract/css": "catalog:",
+    "@vanilla-extract/vite-plugin": "catalog:",
+    "eslint": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
   }
 }
