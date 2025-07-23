@@ -10,7 +10,8 @@
   "devDependencies": {
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "turbo": "catalog:"
+    "turbo": "catalog:",
+    "vite": "catalog:"
   },
   "packageManager": "pnpm@9.5.0"
 }
