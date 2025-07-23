@@ -5,17 +5,21 @@
   "type": "module",
   "main": "index.ts",
   "scripts": {
-    "lint": "eslint \"src/**/*.ts\""
+    "lint": "eslint \"src/**/*.ts\"",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "catalog:"
   },
   "dependencies": {
-    "axios": "catalog:",
-    "@tanstack/react-query": "catalog:"
+    "axios": "catalog:"
   },
   "devDependencies": {
     "@gotchai/eslint-config": "workspace:*",
     "@gotchai/typescript-config": "workspace:*",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vite": "catalog:"
   }
 }
