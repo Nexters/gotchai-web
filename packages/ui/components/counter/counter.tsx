@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { counter } from "./counter.css";
 
-export const Counter: React.FC = () => {
+export const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
