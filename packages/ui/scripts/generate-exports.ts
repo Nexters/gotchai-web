@@ -88,10 +88,13 @@ Array.from(fileMap.entries()).forEach(([key, entry]) => {
 const pkgPath = path.resolve(process.cwd(), "package.json");
 const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
 
-pkg.exports = exportsMap;
+pkg.exports = {
+  ...pkg.exports,
+  ...exportsMap,
+};
 pkg.types = rootTypes;
 
-fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
+fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
 console.log(
   "🎉 [완료] package.json 의 exports 필드 및 types 필드가 성공적으로 생성되었습니다."
 );
