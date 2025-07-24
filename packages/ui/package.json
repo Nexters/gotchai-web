@@ -40,7 +40,7 @@
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
     "@vanilla-extract/css": "catalog:",
-    "@vanilla-extract/vite-plugin": "catalog:",
+    "@vanilla-extract/esbuild-plugin": "^2.3.18",
     "@vitejs/plugin-react": "catalog:",
     "eslint": "catalog:",
     "fast-glob": "^3.3.3",
