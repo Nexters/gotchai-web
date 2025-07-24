@@ -12,14 +12,15 @@
   "dependencies": {
     "@gotchai/ui": "workspace:*",
     "react": "catalog:react19",
-    "react-dom": "catalog:react19"
+    "react-dom": "catalog:react19",
+    "@vanilla-extract/css": "catalog:"
   },
   "devDependencies": {
     "@gotchai/eslint-config": "workspace:*",
     "@gotchai/typescript-config": "workspace:*",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
-    "@vitejs/plugin-react": "catalog:",
+    "@vanilla-extract/vite-plugin": "^5.1.0",
     "eslint": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:"
