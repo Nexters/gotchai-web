@@ -9,39 +9,16 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/gotchai-ui.es.js",
+      "require": "./dist/gotchai-ui.umd.js",
+      "types": "./dist/index.d.ts"
     },
-    "./index.css": {
-      "import": "./dist/index.css",
-      "require": "./dist/index.css"
-    },
-    "./components/header": {
-      "types": "./dist/components/header.d.mts",
-      "import": "./dist/components/header.mjs",
-      "require": "./dist/components/header.js"
-    },
-    "./components/counter/counter": {
-      "types": "./dist/components/counter/counter.d.mts",
-      "import": "./dist/components/counter/counter.mjs",
-      "require": "./dist/components/counter/counter.js"
-    },
-    "./components/button/Button": {
-      "types": "./dist/components/button/Button.d.mts",
-      "import": "./dist/components/button/Button.mjs",
-      "require": "./dist/components/button/Button.js"
-    },
-    "./components/header/header": {
-      "types": "./dist/components/header/header.d.mts",
-      "import": "./dist/components/header/header.mjs",
-      "require": "./dist/components/header/header.js"
-    }
+    "./style.css": "./dist/style.css"
   },
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts\"",
-    "build": "tsup",
-    "postbuild": "tsx scripts/generate-exports.ts",
+    "build": "vite build",
     "build:full": "pnpm build"
   },
   "peerDependencies": {
@@ -54,16 +31,11 @@
     "@gotchai/typescript-config": "workspace:*",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
-    "@vanilla-extract/esbuild-plugin": "^2.3.18",
+    "@vanilla-extract/vite-plugin": "catalog:",
     "@vitejs/plugin-react": "catalog:",
     "eslint": "catalog:",
-    "fast-glob": "^3.3.3",
-    "tsup": "^8.5.0",
-    "tsx": "^4.20.3",
     "typescript": "catalog:",
-    "vite": "catalog:"
-  },
-  "dependencies": {
-    "@vanilla-extract/recipes": "^0.5.7"
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:"
   }
 }
