@@ -12,15 +12,19 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./components/counter": {
-      "types": "./dist/components/counter.d.mts",
-      "import": "./dist/components/counter.mjs",
-      "require": "./dist/components/counter.js"
+    "./index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
     },
     "./components/header": {
       "types": "./dist/components/header.d.mts",
       "import": "./dist/components/header.mjs",
       "require": "./dist/components/header.js"
+    },
+    "./components/counter/counter": {
+      "types": "./dist/components/counter/counter.d.mts",
+      "import": "./dist/components/counter/counter.mjs",
+      "require": "./dist/components/counter/counter.js"
     }
   },
   "license": "MIT",
@@ -32,15 +36,15 @@
   },
   "peerDependencies": {
     "react": "catalog:react19",
-    "react-dom": "catalog:react19"
+    "react-dom": "catalog:react19",
+    "@vanilla-extract/css": "catalog:"
   },
   "devDependencies": {
     "@gotchai/eslint-config": "workspace:*",
     "@gotchai/typescript-config": "workspace:*",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
-    "@vanilla-extract/css": "catalog:",
-    "@vanilla-extract/vite-plugin": "catalog:",
+    "@vanilla-extract/esbuild-plugin": "^2.3.18",
     "@vitejs/plugin-react": "catalog:",
     "eslint": "catalog:",
     "fast-glob": "^3.3.3",
