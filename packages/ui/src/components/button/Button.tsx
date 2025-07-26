@@ -1,7 +1,7 @@
 import { HTMLAttributes, PropsWithChildren } from "react";
 
 import { button, ButtonVariants } from "./style.css";
-import { classNames } from "../../utils";
+import { classNames } from "@/utils";
 
 export type ButtonProps = PropsWithChildren<
   HTMLAttributes<HTMLButtonElement> & ButtonVariants
