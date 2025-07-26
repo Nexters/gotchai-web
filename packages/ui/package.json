@@ -25,6 +25,16 @@
       "types": "./dist/components/counter/counter.d.mts",
       "import": "./dist/components/counter/counter.mjs",
       "require": "./dist/components/counter/counter.js"
+    },
+    "./components/button/Button": {
+      "types": "./dist/components/button/Button.d.mts",
+      "import": "./dist/components/button/Button.mjs",
+      "require": "./dist/components/button/Button.js"
+    },
+    "./components/header/header": {
+      "types": "./dist/components/header/header.d.mts",
+      "import": "./dist/components/header/header.mjs",
+      "require": "./dist/components/header/header.js"
     }
   },
   "license": "MIT",
@@ -35,9 +45,9 @@
     "build:full": "pnpm build"
   },
   "peerDependencies": {
+    "@vanilla-extract/css": "catalog:",
     "react": "catalog:react19",
-    "react-dom": "catalog:react19",
-    "@vanilla-extract/css": "catalog:"
+    "react-dom": "catalog:react19"
   },
   "devDependencies": {
     "@gotchai/eslint-config": "workspace:*",
@@ -52,5 +62,8 @@
     "tsx": "^4.20.3",
     "typescript": "catalog:",
     "vite": "catalog:"
+  },
+  "dependencies": {
+    "@vanilla-extract/recipes": "^0.5.7"
   }
 }
