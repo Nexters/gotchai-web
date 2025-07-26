@@ -43,18 +43,3 @@ export const titleVariant = styleVariants({
   6: [titleBase, { fontSize: "20px" }],
 });
 
-// Body 기본 스타일
-const bodyBase = style({
-  fontWeight: fontWeight.medium,
-  lineHeight: lineHeight.normal,
-  fontFamily: fontFamily.sans,
-});
-
-// Body variants (1~5)
-export const bodyVariant = styleVariants({
-  1: [bodyBase, { fontSize: fontSize.xl }],
-  2: [bodyBase, { fontSize: fontSize.lg, fontWeight: fontWeight.semibold }],
-  3: [bodyBase, { fontSize: fontSize.base, fontWeight: fontWeight.semibold }],
-  4: [bodyBase, { fontSize: fontSize.sm }],
-  5: [bodyBase, { fontSize: fontSize.xs }],
-});
