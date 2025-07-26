@@ -1,1 +1,3 @@
-export * from "./button";
+export * from "./Button";
+export * from "./Title";
+export * from "./Text";
