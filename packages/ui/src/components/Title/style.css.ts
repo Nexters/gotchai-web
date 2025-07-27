@@ -1,13 +1,13 @@
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
-import { COLORS } from "@/styles/colors";
+import { COLOR_VARS } from "@/styles";
 
 export const title = recipe({
   base: {
     fontWeight: 600,
     lineHeight: "150%",
     fontFamily: "Pretendard, sans-serif",
-    color: COLORS.black,
+    color: COLOR_VARS.white,
   },
 
   variants: {

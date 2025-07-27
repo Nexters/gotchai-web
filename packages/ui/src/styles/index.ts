@@ -1,2 +1,2 @@
 export * from "./colors";
-export { theme } from "./theme.css";
+export { THEME, COLOR_VARS } from "./theme.css";
