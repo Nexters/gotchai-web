@@ -20,7 +20,7 @@ export default defineConfig({
       formats: ["es", "umd"],
     },
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "es-toolkit", "@vanilla-extract/css"],
       output: {
         globals: {
           react: "React",
