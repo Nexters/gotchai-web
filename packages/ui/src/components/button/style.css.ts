@@ -1,6 +1,6 @@
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
-import { COLORS } from "@/styles/colors";
+import { COLOR_VARS } from "@/styles";
 
 export const button = recipe({
   base: {
@@ -27,12 +27,12 @@ export const button = recipe({
   variants: {
     variant: {
       default: {
-        backgroundColor: COLORS.gray[50],
-        color: COLORS.gray[900],
+        backgroundColor: COLOR_VARS.gray[50],
+        color: COLOR_VARS.gray[900],
       },
       filled: {
-        backgroundColor: COLORS.green[400],
-        color: COLORS.black,
+        backgroundColor: COLOR_VARS.green[400],
+        color: COLOR_VARS.black,
       },
     },
 

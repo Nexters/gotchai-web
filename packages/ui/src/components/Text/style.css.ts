@@ -1,6 +1,6 @@
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 
-import { COLORS } from "@/styles/colors";
+import { COLOR_VARS } from "@/styles";
 
 export const text = recipe({
   base: {
@@ -12,7 +12,7 @@ export const text = recipe({
 
     textDecoration: "none",
 
-    color: COLORS.black,
+    color: COLOR_VARS.white,
   },
 
   variants: {
