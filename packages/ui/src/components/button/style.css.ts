@@ -1,6 +1,5 @@
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
-
-import { COLOR_VARS } from "@/styles";
+import { COLOR_VARS, media } from "@/styles";
 
 export const button = recipe({
   base: {
@@ -15,35 +14,64 @@ export const button = recipe({
     cursor: "pointer",
 
     textDecoration: "none",
-    fontWeight: 400,
+    lineHeight: "150%",
+    fontFamily: "Pretendard",
+    fontWeight: 600,
+    ":active": {
+      transform: "translateY(2px)",
+    },
 
-    /** @TODO: Add hover, active, disabled, focus styles */
-    ":hover": {},
-    ":active": {},
-    ":disabled": {},
-    ":focus": {},
+    ":disabled": {
+      cursor: "not-allowed",
+      pointerEvents: "none",
+    },
   },
 
   variants: {
     variant: {
       default: {
-        backgroundColor: COLOR_VARS.gray[50],
-        color: COLOR_VARS.gray[900],
+        gap: 8,
+        padding: "12px 18px",
+        borderRadius: 14,
+        backgroundColor: COLOR_VARS.transparent,
+        color: COLOR_VARS.white,
+        fontSize: 18,
+
+        ":hover": {
+          backgroundColor: COLOR_VARS.gray[800],
+        },
+
+        ":disabled": {
+          backgroundColor: COLOR_VARS.transparent,
+          color: COLOR_VARS.gray[600],
+        },
       },
       filled: {
+        padding: "20px 16px",
         backgroundColor: COLOR_VARS.green[400],
         color: COLOR_VARS.black,
-      },
-    },
-
-    size: {
-      sm: {
-        padding: "12px 18px",
-        fontSize: 18,
-      },
-      md: {
-        padding: "20px 36px",
         fontSize: 20,
+        minWidth: 320,
+
+        ":hover": {
+          backgroundColor: COLOR_VARS.green[300],
+        },
+
+        ":active": {
+          backgroundColor: COLOR_VARS.green[500],
+        },
+
+        ":disabled": {
+          backgroundColor: COLOR_VARS.gray[500],
+          color: COLOR_VARS.gray[700],
+        },
+
+        ...media.mobile({
+          padding: "16px 20px",
+          fontSize: 18,
+          fontWeight: 500,
+          borderRadius: 16,
+        }),
       },
     },
 
@@ -62,7 +90,6 @@ export const button = recipe({
 
   defaultVariants: {
     variant: "default",
-    size: "md",
     rounded: false,
     fullWidth: false,
   },
