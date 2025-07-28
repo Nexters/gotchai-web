@@ -1,4 +1,5 @@
 import { COLOR_VARS } from "@/styles";
+import { media } from "@/styles/media";
 import { style } from "@vanilla-extract/css";
 
 export const toast = style({
@@ -10,6 +11,11 @@ export const toast = style({
   padding: "16px 20px",
   borderRadius: 16,
   margin: 0,
+
+  ...media.mobile({
+    borderRadius: 40,
+    fontSize: 14,
+  }),
 });
 
 export const toastIcon = style({
@@ -18,9 +24,15 @@ export const toastIcon = style({
   borderRadius: 2,
   backgroundColor: COLOR_VARS.gray[400],
   verticalAlign: "middle",
+
+  ...media.mobile({
+    width: 16,
+    height: 16,
+  }),
 });
 
 export const toastContainer = style({
-  // @ts-expect-error - CSS custom property not supported by vanilla-extract types
-  "--toastify-toast-width": "fit-content",
+  vars: {
+    "--toastify-toast-width": "fit-content",
+  },
 });
