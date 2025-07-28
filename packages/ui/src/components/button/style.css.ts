@@ -1,6 +1,5 @@
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
-
-import { COLOR_VARS } from "@/styles";
+import { COLOR_VARS, media } from "@/styles";
 
 export const button = recipe({
   base: {
@@ -66,6 +65,13 @@ export const button = recipe({
           backgroundColor: COLOR_VARS.gray[500],
           color: COLOR_VARS.gray[700],
         },
+
+        ...media.mobile({
+          padding: "16px 20px",
+          fontSize: 18,
+          fontWeight: 500,
+          borderRadius: 16,
+        }),
       },
     },
 
