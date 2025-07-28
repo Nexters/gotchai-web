@@ -70,6 +70,7 @@ export const button = recipe({
           padding: "16px 20px",
           fontSize: 18,
           fontWeight: 500,
+          minWidth: 280,
           borderRadius: 16,
         }),
       },
