@@ -23,9 +23,9 @@
   },
   "peerDependencies": {
     "@vanilla-extract/css": "catalog:",
+    "es-toolkit": "^1.39.8",
     "react": "catalog:react19",
-    "react-dom": "catalog:react19",
-    "es-toolkit": "^1.39.8"
+    "react-dom": "catalog:react19"
   },
   "devDependencies": {
     "@gotchai/eslint-config": "workspace:*",
@@ -40,6 +40,7 @@
     "vite-plugin-dts": "catalog:"
   },
   "dependencies": {
-    "@vanilla-extract/recipes": "^0.5.7"
+    "@vanilla-extract/recipes": "^0.5.7",
+    "react-toastify": "^11.0.5"
   }
 }
