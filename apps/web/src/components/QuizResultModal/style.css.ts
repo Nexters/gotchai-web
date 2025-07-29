@@ -38,3 +38,10 @@ export const answerContainer = style({
   padding: "12px 16px",
   gap: "6px",
 });
+
+export const buttonContainer = style({
+  width: "90%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+});
