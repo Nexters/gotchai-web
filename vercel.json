@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd apps/web && pnpm build",
+  "buildCommand": "cd ../../ && pnpm build",
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install",
   "framework": "vite"
