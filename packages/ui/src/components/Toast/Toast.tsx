@@ -28,7 +28,7 @@ export const ToastContainer = () => {
     <_ToastContainer
       position="bottom-center"
       className={toastContainer}
-      autoClose={1_000}
+      autoClose={2_000}
       closeButton={false}
       hideProgressBar
       toastStyle={{
@@ -36,6 +36,7 @@ export const ToastContainer = () => {
         boxShadow: "none",
         padding: 0,
         margin: 0,
+        bottom: 80,
       }}
     />
   );

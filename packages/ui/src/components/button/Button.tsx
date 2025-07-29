@@ -31,9 +31,7 @@ export const Button = ({
       {...props}
     >
       {leftItem}
-      <Text weight="semibold" style={{ fontSize: "inherit", color: "inherit" }}>
-        {children}
-      </Text>
+      <Text style={{ fontSize: "inherit", color: "inherit" }}>{children}</Text>
       {rightItem}
     </button>
   );

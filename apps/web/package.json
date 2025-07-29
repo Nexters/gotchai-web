@@ -12,9 +12,10 @@
   "dependencies": {
     "@gotchai/ui": "workspace:*",
     "@vanilla-extract/css": "catalog:",
+    "es-toolkit": "^1.39.8",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
-    "es-toolkit": "^1.39.8"
+    "react-router-dom": "^7.7.1"
   },
   "devDependencies": {
     "@gotchai/eslint-config": "workspace:*",
