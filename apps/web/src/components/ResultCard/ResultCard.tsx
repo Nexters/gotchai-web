@@ -25,7 +25,7 @@ export const ResultCard = ({ result }: CardProps) => {
       <div className={cardContent}>
         <img src={imageSrc} className={cardImage} alt="card" />
         <Text size="xl" weight="medium" color={config.textColor}>
-          모두 맞춘 당신은
+          {config.startTitle}
         </Text>
         <Title order={3} color={config.titleColor}>
           {config.title}
