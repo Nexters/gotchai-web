@@ -25,6 +25,7 @@ export const wrapper = style({
 
 export const container = style({
   maxWidth: 420,
+  width: "100%",
   margin: "0 auto",
 
   display: "flex",
@@ -37,4 +38,8 @@ export const logo = style({
   maxWidth: 420,
   margin: "0 auto",
   height: 28,
+
+  ...media.mobile({
+    height: 20,
+  }),
 });

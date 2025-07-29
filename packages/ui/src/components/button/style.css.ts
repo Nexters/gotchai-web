@@ -52,7 +52,8 @@ export const button = recipe({
         backgroundColor: COLOR_VARS.green[400],
         color: COLOR_VARS.black,
         fontSize: 20,
-        minWidth: 320,
+        maxWidth: 320,
+        width: "100%",
 
         ":hover": {
           backgroundColor: COLOR_VARS.green[300],
@@ -71,9 +72,6 @@ export const button = recipe({
           padding: "16px 20px",
           fontSize: 18,
           fontWeight: 500,
-          minWidth: "unset",
-          maxWidth: 320,
-          width: "100%",
           borderRadius: 16,
         }),
       },
