@@ -1,5 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { overlay, content } from "./style.css";
+import { overlay, content, hidden } from "./style.css";
 import { ReactNode } from "react";
 
 export type ModalProps = {
@@ -13,7 +13,10 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
     <Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <Dialog.Overlay className={overlay} />
       <Dialog.Content className={content}>
-        <Dialog.Title />
+        <Dialog.Title className={hidden}>DeleteWarning</Dialog.Title>
+        <Dialog.Description className={hidden}>
+          DeleteWarning
+        </Dialog.Description>
         {children}
       </Dialog.Content>
     </Dialog.Root>

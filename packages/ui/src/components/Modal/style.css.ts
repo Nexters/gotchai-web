@@ -14,7 +14,7 @@ export const content = style({
   boxShadow:
     "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)",
   width: "95vw",
-  maxWidth: "320px",
+  maxWidth: "360px",
   maxHeight: "524px",
   position: "fixed",
   top: "50%",
@@ -29,4 +29,8 @@ export const content = style({
   opacity: 1,
   outline: "none",
   zIndex: 1001,
+});
+
+export const hidden = style({
+  display: "none",
 });
