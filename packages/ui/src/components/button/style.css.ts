@@ -16,7 +16,8 @@ export const button = recipe({
     textDecoration: "none",
     lineHeight: "150%",
     fontFamily: "Pretendard",
-    fontWeight: 600,
+    fontWeight: 500,
+
     ":active": {
       transform: "translateY(2px)",
     },
