@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
+  "scripts": {
+    "build": "echo 'typescript-config build completed'"
+  },
   "publishConfig": {
     "access": "public"
   }
