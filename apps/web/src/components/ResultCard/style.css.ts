@@ -83,8 +83,8 @@ export const cardContent = style({
 });
 
 export const cardImage = style({
-  width: "100%",
-  height: "100%",
+  width: "213px",
+  height: "213px",
   borderRadius: "50%",
   marginTop: "26px",
   marginBottom: "26px",
@@ -96,6 +96,12 @@ export const cardText = style({
   whiteSpace: "pre-line",
   textAlign: "center",
   color: "rgba(255, 255, 255, 0.7)",
+});
+
+export const cardLogo = style({
+  width: "56px",
+  height: "11px",
+  marginTop: "9px",
 });
 
 export type CardRadialGradientVariants = RecipeVariants<

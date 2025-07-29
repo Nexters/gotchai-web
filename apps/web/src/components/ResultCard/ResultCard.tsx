@@ -6,9 +6,11 @@ import {
   cardText,
   cardLinearBackground,
   cardRadialGradient,
+  cardLogo,
 } from "./style.css";
 import { CardResult, getCardConfig } from "./cardConfig";
 import { getCardImage } from "./cardImages";
+import { default as Logo } from "../../assets/svg/logo.svg";
 
 interface CardProps {
   result: CardResult;
@@ -33,6 +35,7 @@ export const ResultCard = ({ result }: CardProps) => {
         <Text size="lg" weight="medium" className={cardText}>
           {config.text}
         </Text>
+        <Logo fill={config.textColor} className={cardLogo} />
       </div>
     </div>
   );
