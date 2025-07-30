@@ -12,7 +12,7 @@ import {
 import { CardResult, CARD_CONTENTS } from "./cardConfig";
 import { CONTENT_COLORS } from "./cardConfig";
 
-import Logo from "../../assets/svg/logo.svg";
+import Logo from "../../assets/svg/logo.svg?react";
 
 interface CardProps {
   result: CardResult;
