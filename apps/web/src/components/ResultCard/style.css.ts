@@ -3,6 +3,7 @@ import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 import { hexToRgba } from "@gotchai/ui";
 import { BACKGROUND_GRADIENTS, CONTENT_COLORS, CardResult } from "./cardConfig";
 import { COLORS } from "@gotchai/ui";
+import { getLinearGradient, getRadialGradient } from "../../utils/colorUtils";
 
 export const cardContainer = style({
   width: "100%",
@@ -18,7 +19,11 @@ export const cardContainer = style({
 });
 
 export const cardLinearBackground = style({
-  background: `linear-gradient(120deg, ${BACKGROUND_GRADIENTS.LEFT_TOP} 0%, ${BACKGROUND_GRADIENTS.RIGHT_BOTTOM} 100%)`,
+  background: getLinearGradient(
+    135,
+    BACKGROUND_GRADIENTS.LEFT_TOP,
+    BACKGROUND_GRADIENTS.RIGHT_BOTTOM
+  ),
   opacity: 0.2,
   position: "absolute",
   top: 0,
@@ -41,31 +46,22 @@ export const cardRadialGradient = recipe({
   variants: {
     result: {
       [CardResult.GOLD]: {
-        background: `
-          radial-gradient(
-            circle closest-corner at center 110%, 
-            ${hexToRgba(CONTENT_COLORS[CardResult.GOLD].subTitle, 1)} 0%, 
-            ${hexToRgba(CONTENT_COLORS[CardResult.GOLD].subTitle, 0)} 100%
-          )
-        `,
+        background: getRadialGradient(
+          CONTENT_COLORS[CardResult.GOLD].subTitle,
+          1
+        ),
       },
       [CardResult.SILVER]: {
-        background: `
-          radial-gradient(
-            circle closest-corner at center 110%, 
-            ${hexToRgba(CONTENT_COLORS[CardResult.SILVER].subTitle, 1)} 0%, 
-            ${hexToRgba(CONTENT_COLORS[CardResult.SILVER].subTitle, 0)} 100%
-          )
-        `,
+        background: getRadialGradient(
+          CONTENT_COLORS[CardResult.SILVER].subTitle,
+          1
+        ),
       },
       [CardResult.BRONZE]: {
-        background: `
-          radial-gradient(
-            circle closest-corner at center 110%, 
-            ${hexToRgba(CONTENT_COLORS[CardResult.BRONZE].subTitle, 1)} 0%, 
-            ${hexToRgba(CONTENT_COLORS[CardResult.BRONZE].subTitle, 0)} 100%
-          )
-        `,
+        background: getRadialGradient(
+          CONTENT_COLORS[CardResult.BRONZE].subTitle,
+          1
+        ),
       },
     },
   },
