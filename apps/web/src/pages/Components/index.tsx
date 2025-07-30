@@ -1,11 +1,12 @@
 import { ResultCard } from "../../components/ResultCard/ResultCard";
+import { CardResult } from "../../components/ResultCard/cardConfig";
 
 export const ComponentsPage = () => {
   return (
     <div>
-      <ResultCard result="gold" />
-      <ResultCard result="silver" />
-      <ResultCard result="bronze" />
+      <ResultCard result={CardResult.GOLD} />
+      <ResultCard result={CardResult.SILVER} />
+      <ResultCard result={CardResult.BRONZE} />
     </div>
   );
 };

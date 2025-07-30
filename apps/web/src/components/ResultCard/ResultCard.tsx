@@ -8,8 +8,8 @@ import {
   cardRadialGradient,
   cardLogo,
 } from "./style.css";
-import { CardResult, getCardConfig } from "./cardConfig";
-import { getCardImage } from "./cardImages";
+import { CardResult, CARD_CONTENTS } from "./cardConfig";
+import { CONTENT_COLORS } from "./cardConfig";
 import { default as Logo } from "../../assets/svg/logo.svg";
 
 interface CardProps {
@@ -17,8 +17,7 @@ interface CardProps {
 }
 
 export const ResultCard = ({ result }: CardProps) => {
-  const config = getCardConfig(result);
-  const imageSrc = getCardImage(result);
+  const imageSrc = `/assets/${result}.png`;
 
   return (
     <div className={cardContainer}>
@@ -26,16 +25,16 @@ export const ResultCard = ({ result }: CardProps) => {
       <div className={cardRadialGradient({ result })} />
       <div className={cardContent}>
         <img src={imageSrc} className={cardImage} alt="card" />
-        <Text size="xl" weight="medium" color={config.textColor}>
-          {config.startTitle}
+        <Text size="xl" weight="medium" color={CONTENT_COLORS[result].subTitle}>
+          {CARD_CONTENTS[result].subTitle}
         </Text>
-        <Title order={3} color={config.titleColor}>
-          {config.title}
+        <Title order={3} color={CONTENT_COLORS[result].title}>
+          {CARD_CONTENTS[result].title}
         </Title>
         <Text size="lg" weight="medium" className={cardText}>
-          {config.text}
+          {CARD_CONTENTS[result].description}
         </Text>
-        <Logo fill={config.textColor} className={cardLogo} />
+        <Logo fill={CONTENT_COLORS[result].title} className={cardLogo} />
       </div>
     </div>
   );

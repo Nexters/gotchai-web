@@ -1,5 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
+import { hexToRgba } from "@gotchai/ui";
+import { CONTENT_COLORS } from "./cardConfig";
 
 export const cardContainer = style({
   width: "100%",
@@ -41,8 +43,8 @@ export const cardRadialGradient = recipe({
         background: `
           radial-gradient(
             circle closest-corner at center 110%, 
-            rgba(250, 227, 79, 1) 0%, 
-            rgba(250, 227, 79, 0) 100%
+            ${hexToRgba(CONTENT_COLORS.gold.subTitle, 1)} 0%, 
+            ${hexToRgba(CONTENT_COLORS.gold.subTitle, 0)} 100%
           )
         `,
       },
@@ -50,8 +52,8 @@ export const cardRadialGradient = recipe({
         background: `
           radial-gradient(
             circle closest-corner at center 110%, 
-            rgba(116, 137, 239, 1) 0%, 
-            rgba(116, 137, 239, 0) 100%
+            ${hexToRgba(CONTENT_COLORS.silver.subTitle, 1)} 0%, 
+            ${hexToRgba(CONTENT_COLORS.silver.subTitle, 0)} 100%
           )
         `,
       },
@@ -59,8 +61,8 @@ export const cardRadialGradient = recipe({
         background: `
           radial-gradient(
             circle closest-corner at center 110%, 
-            rgba(231, 150, 73, 1) 0%, 
-            rgba(231, 150, 73, 0) 100%
+            ${hexToRgba(CONTENT_COLORS.bronze.subTitle, 1)} 0%, 
+            ${hexToRgba(CONTENT_COLORS.bronze.subTitle, 0)} 100%
           )
         `,
       },

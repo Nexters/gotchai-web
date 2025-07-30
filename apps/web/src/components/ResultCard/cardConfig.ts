@@ -1,41 +1,47 @@
-export type CardResult = "gold" | "silver" | "bronze";
+import { Hex } from "@gotchai/ui";
 
-export interface CardConfig {
-  color: string;
-  startTitle: string;
-  titleColor: string;
-  textColor: string;
-  title: string;
-  text: string;
+export enum CardResult {
+  GOLD = "gold",
+  SILVER = "silver",
+  BRONZE = "bronze",
 }
 
-export const CARD_CONFIGS: Record<CardResult, CardConfig> = {
-  gold: {
-    color: "#BDAB47",
-    startTitle: "모두 다맞춘",
-    titleColor: "#FFEC87",
-    textColor: "#BDAB47",
+export interface CardContent {
+  subTitle: string;
+  title: string;
+  description: string;
+}
+
+export const CARD_CONTENTS: Record<CardResult, CardContent> = {
+  [CardResult.GOLD]: {
+    subTitle: "모두 다맞춘",
     title: "기계 사냥꾼",
-    text: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
+    description: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
   },
-  silver: {
-    color: "#6D8DC4",
-    startTitle:"충분히 잘하는",
-    titleColor: "#BED6FF",
-    textColor: "#6D8DC4",
+  [CardResult.SILVER]: {
+    subTitle: "충분히 잘하는",
     title: "기계 사냥꾼",
-    text: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
+    description: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
   },
-  bronze: {
-    color: "#B9804B",
-    startTitle:"노력이 필요한 당신은",
-    titleColor: "#FFC289",
-    textColor: "#B9804B",
+  [CardResult.BRONZE]: {
+    subTitle: "노력이 필요한 당신은",
     title: "기계 사냥꾼",
-    text: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
+    description: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
   },
 };
 
-export const getCardConfig = (result: CardResult): CardConfig => {
-  return CARD_CONFIGS[result];
-};
+export const CONTENT_COLORS: Record<CardResult, { subTitle: Hex; title: Hex }> =
+  {
+    [CardResult.GOLD]: {
+      subTitle: "#BDAB47",
+      title: "#FFEC87",
+    },
+    [CardResult.SILVER]: {
+      subTitle: "#6D8DC4",
+      title: "#BED6FF",
+    },
+    [CardResult.BRONZE]: {
+      subTitle: "#B9804B",
+      title: "#FFC289",
+    },
+  };
