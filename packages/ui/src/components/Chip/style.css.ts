@@ -15,7 +15,7 @@ export const chip = recipe({
       (keys(COLORS) as Array<keyof typeof COLORS>).map((colorKey) => [
         colorKey,
         {
-          backgroundColor: `rgba(${hexToRgba(getColorValue(colorKey), 0.1)})`,
+          backgroundColor: hexToRgba(getColorValue(colorKey), 0.1),
           color: getColorValue(colorKey),
         },
       ])
