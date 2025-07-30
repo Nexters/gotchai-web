@@ -1,8 +1,9 @@
 import { style } from "@vanilla-extract/css";
 import { COLORS } from "@/styles";
+import { hexToRgba } from "@/utils/hexToRgba";
 
 export const overlay = style({
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  backgroundColor: hexToRgba(COLORS.black, 0.5),
   position: "fixed",
   inset: 0,
   zIndex: 1000,
@@ -11,8 +12,7 @@ export const overlay = style({
 export const content = style({
   backgroundColor: COLORS.gray[900],
   borderRadius: "20px",
-  boxShadow:
-    "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)",
+  boxShadow: `0 20px 25px -5px ${hexToRgba(COLORS.black, 0.3)}, 0 10px 10px -5px ${hexToRgba(COLORS.black, 0.2)}`,
   width: "95vw",
   maxWidth: "360px",
   maxHeight: "524px",
