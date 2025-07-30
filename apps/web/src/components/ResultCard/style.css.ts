@@ -1,7 +1,8 @@
 import { style } from "@vanilla-extract/css";
 import { recipe, RecipeVariants } from "@vanilla-extract/recipes";
 import { hexToRgba } from "@gotchai/ui";
-import { CONTENT_COLORS } from "./cardConfig";
+import { BACKGROUND_GRADIENTS, CONTENT_COLORS, CardResult } from "./cardConfig";
+import { COLORS } from "@gotchai/ui";
 
 export const cardContainer = style({
   width: "100%",
@@ -13,11 +14,11 @@ export const cardContainer = style({
   position: "relative",
   borderRadius: "24px",
   overflow: "hidden",
-  border: "1px solid rgba(255, 255, 255, 0.2)",
+  border: `1px solid ${hexToRgba(COLORS.white, 0.2)}`,
 });
 
 export const cardLinearBackground = style({
-  background: "linear-gradient(135deg, #DEDFD0 100%, #9EA481 100%)",
+  background: `linear-gradient(120deg, ${BACKGROUND_GRADIENTS.LEFT_TOP} 0%, ${BACKGROUND_GRADIENTS.RIGHT_BOTTOM} 100%)`,
   opacity: 0.2,
   position: "absolute",
   top: 0,
@@ -39,37 +40,37 @@ export const cardRadialGradient = recipe({
   },
   variants: {
     result: {
-      gold: {
+      [CardResult.GOLD]: {
         background: `
           radial-gradient(
             circle closest-corner at center 110%, 
-            ${hexToRgba(CONTENT_COLORS.gold.subTitle, 1)} 0%, 
-            ${hexToRgba(CONTENT_COLORS.gold.subTitle, 0)} 100%
+            ${hexToRgba(CONTENT_COLORS[CardResult.GOLD].subTitle, 1)} 0%, 
+            ${hexToRgba(CONTENT_COLORS[CardResult.GOLD].subTitle, 0)} 100%
           )
         `,
       },
-      silver: {
+      [CardResult.SILVER]: {
         background: `
           radial-gradient(
             circle closest-corner at center 110%, 
-            ${hexToRgba(CONTENT_COLORS.silver.subTitle, 1)} 0%, 
-            ${hexToRgba(CONTENT_COLORS.silver.subTitle, 0)} 100%
+            ${hexToRgba(CONTENT_COLORS[CardResult.SILVER].subTitle, 1)} 0%, 
+            ${hexToRgba(CONTENT_COLORS[CardResult.SILVER].subTitle, 0)} 100%
           )
         `,
       },
-      bronze: {
+      [CardResult.BRONZE]: {
         background: `
           radial-gradient(
             circle closest-corner at center 110%, 
-            ${hexToRgba(CONTENT_COLORS.bronze.subTitle, 1)} 0%, 
-            ${hexToRgba(CONTENT_COLORS.bronze.subTitle, 0)} 100%
+            ${hexToRgba(CONTENT_COLORS[CardResult.BRONZE].subTitle, 1)} 0%, 
+            ${hexToRgba(CONTENT_COLORS[CardResult.BRONZE].subTitle, 0)} 100%
           )
         `,
       },
     },
   },
   defaultVariants: {
-    result: "gold",
+    result: CardResult.GOLD,
   },
 });
 
@@ -97,7 +98,7 @@ export const cardText = style({
   marginTop: "16px",
   whiteSpace: "pre-line",
   textAlign: "center",
-  color: "rgba(255, 255, 255, 0.7)",
+  color: hexToRgba(COLORS.white, 0.7),
 });
 
 export const cardLogo = style({

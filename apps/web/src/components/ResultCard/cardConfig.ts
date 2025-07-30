@@ -12,6 +12,11 @@ export interface CardContent {
   description: string;
 }
 
+export const BACKGROUND_GRADIENTS: Record<string, Hex> = {
+  LEFT_TOP: "#DEDFD0",
+  RIGHT_BOTTOM: "#9EA481",
+};
+
 export const CARD_CONTENTS: Record<CardResult, CardContent> = {
   [CardResult.GOLD]: {
     subTitle: "모두 다맞춘",
