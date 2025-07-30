@@ -1,4 +1,5 @@
 import { Text, Title } from "@gotchai/ui";
+
 import {
   cardContainer,
   cardContent,
@@ -10,7 +11,7 @@ import {
 } from "./style.css";
 import { CardResult, CARD_CONTENTS } from "./cardConfig";
 import { CONTENT_COLORS } from "./cardConfig";
-import { default as Logo } from "../../assets/svg/logo.svg";
+import Logo from "../../assets/svg/logo.svg?react";
 
 interface CardProps {
   result: CardResult;
