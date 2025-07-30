@@ -1,8 +1,10 @@
-export const hexToRgba = (hex: `#${string}`, opacity: number) => {
-  return `${hexToRgb(hex)}, ${opacity}`;
+export type Hex = `#${string}`;
+
+export const hexToRgba = (hex: Hex, opacity: number) => {
+  return `rgba(${hexToRgb(hex)}, ${opacity})`;
 };
 
-export const hexToRgb = (hex: `#${string}`) => {
+export const hexToRgb = (hex: Hex) => {
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
   const b = parseInt(hex.slice(5, 7), 16);
