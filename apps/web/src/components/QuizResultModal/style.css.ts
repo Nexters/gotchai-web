@@ -2,8 +2,9 @@ import { style } from "@vanilla-extract/css";
 import { COLORS } from "@gotchai/ui";
 
 export const modalContent = style({
-  width: "90%",
-  padding: "32px 12px 12px 12px",
+  width: "100%",
+  padding: "40px 24px 24px 24px",
+  boxSizing: "border-box",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -20,6 +21,11 @@ export const iconContainer = style({
   alignItems: "center",
 });
 
+export const titleContainer = style({
+  width: "100%",
+  marginTop: "24px",
+});
+
 export const divider = style({
   width: "100%",
   height: "0.6px",
@@ -27,21 +33,26 @@ export const divider = style({
 });
 
 export const answerContainer = style({
-  width: "90%",
+  width: "100%",
   backgroundColor: COLORS.gray[800],
   borderRadius: "20px",
   display: "flex",
   flexDirection: "column",
-  marginTop: "20px",
+  marginTop: "16px",
   alignItems: "center",
   textAlign: "center",
   padding: "12px 16px",
+  boxSizing: "border-box",
   gap: "6px",
 });
 
 export const buttonContainer = style({
-  width: "90%",
+  width: "100%",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+});
+
+export const nextButton = style({
+  marginTop: "32px",
 });

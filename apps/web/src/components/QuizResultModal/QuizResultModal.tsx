@@ -3,8 +3,9 @@ import {
   modalContent,
   answerContainer,
   iconContainer,
+  titleContainer,
   divider,
-  buttonContainer,
+  nextButton,
 } from "./style.css";
 import { COLORS, Modal } from "@gotchai/ui";
 import { Button, Text, Title } from "@gotchai/ui";
@@ -30,9 +31,11 @@ export const QuizResultModal = ({
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className={modalContent}>
         <div className={iconContainer}>{icon}</div>
-        <Title order={5} color={COLORS.gray[50]} style={{ marginTop: "36px" }}>
-          {title}
-        </Title>
+        <div className={titleContainer}>
+          <Title order={5} color={COLORS.gray[50]}>
+            {title}
+          </Title>
+        </div>
         <div className={answerContainer}>
           <Text size="lg" color={COLORS.gray[200]} weight="medium">
             정답 공개
@@ -42,17 +45,10 @@ export const QuizResultModal = ({
             {answer}
           </Text>
         </div>
-        <div className={buttonContainer}>
-          <Button
-            variant="filled"
-            onClick={onClickNext}
-            style={{
-              marginTop: "20px",
-            }}
-          >
-            다음
-          </Button>
-        </div>
+
+        <Button variant="filled" onClick={onClickNext} className={nextButton}>
+          다음
+        </Button>
       </div>
     </Modal>
   );
