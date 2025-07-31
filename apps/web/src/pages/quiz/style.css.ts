@@ -9,6 +9,9 @@ export const quizContainer = style({
   justifyContent: "center",
   alignItems: "center",
   boxSizing: "border-box",
+  maxWidth: 420,
+  width: "100%",
+  justifySelf: "center",
   height: "100dvh",
   padding: "20px",
 
