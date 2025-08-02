@@ -1,4 +1,5 @@
 import { Button, Text, Title } from "@gotchai/ui";
+import { useNavigate } from "react-router-dom";
 
 import { Copyable } from "../../components/Copyable";
 import { Layout } from "../../components/Layout/Layout";
@@ -20,6 +21,8 @@ export const IntroPage = () => {
 };
 
 const IntroContent = () => {
+  const navigate = useNavigate();
+
   return (
     <div className={introContainer}>
       <Title order={1} className={introTitle}>
@@ -46,7 +49,9 @@ const IntroContent = () => {
       </div>
       <div className={introFooter}>
         <Text className={introParticipant}>참여자 수 | 435명</Text>
-        <Button variant="filled">나는 얼마나 AI를 잘 찾을까?</Button>
+        <Button variant="filled" onClick={() => navigate("/quiz")}>
+          나는 얼마나 AI를 잘 찾을까?
+        </Button>
       </div>
     </div>
   );

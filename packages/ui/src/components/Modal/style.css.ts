@@ -4,6 +4,8 @@ import { hexToRgba } from "@/utils/hexToRgba";
 
 export const overlay = style({
   backgroundColor: hexToRgba(COLORS.black, 0.5),
+  backdropFilter: "blur(8px)",
+  WebkitBackdropFilter: "blur(8px)",
   position: "fixed",
   inset: 0,
   zIndex: 1000,
@@ -11,11 +13,10 @@ export const overlay = style({
 
 export const content = style({
   backgroundColor: COLORS.gray[900],
+  maxWidth: 420,
+  width: 'calc(100% - 40px)',
   borderRadius: "20px",
   boxShadow: `0 20px 25px -5px ${hexToRgba(COLORS.black, 0.3)}, 0 10px 10px -5px ${hexToRgba(COLORS.black, 0.2)}`,
-  width: "95vw",
-  maxWidth: "360px",
-  maxHeight: "524px",
   position: "fixed",
   top: "50%",
   left: "50%",
