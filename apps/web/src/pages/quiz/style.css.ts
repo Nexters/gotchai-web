@@ -16,7 +16,6 @@ export const quizContainer = style({
   padding: "20px",
 
   gap: "24px",
-  backgroundColor: COLORS.black,
   color: COLORS.white,
   overflow: "hidden",
 });
