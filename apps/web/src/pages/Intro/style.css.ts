@@ -18,9 +18,11 @@ export const introTitle = style({
 
 export const introImage = style({
   width: 300,
+  height: 240,
 
   ...media.mobile({
     maxWidth: 300,
+    height: 'auto',
     width: "100%",
   }),
 });
