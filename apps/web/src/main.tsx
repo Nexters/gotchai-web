@@ -9,6 +9,7 @@ createRoot(document.getElementById("app")!).render(
     <div className={THEME}>
       <App />
       <ToastContainer />
+      <div id="portal" />
     </div>
   </BrowserRouter>
 );

@@ -13,6 +13,8 @@ export const overlay = style({
 
 export const content = style({
   backgroundColor: COLORS.gray[900],
+  maxWidth: 420,
+  width: 'calc(100% - 40px)',
   borderRadius: "20px",
   boxShadow: `0 20px 25px -5px ${hexToRgba(COLORS.black, 0.3)}, 0 10px 10px -5px ${hexToRgba(COLORS.black, 0.2)}`,
   position: "fixed",

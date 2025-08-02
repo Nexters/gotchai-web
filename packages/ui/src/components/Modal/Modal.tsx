@@ -1,6 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { overlay, content, hidden } from "./style.css";
 import { ReactNode } from "react";
+import { createPortal } from "react-dom";
+
+import { overlay, content, hidden } from "./style.css";
 
 export type ModalProps = {
   isOpen: boolean;
@@ -9,7 +11,7 @@ export type ModalProps = {
 };
 
 export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
-  return (
+  return createPortal(
     <Dialog.Root open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <Dialog.Overlay className={overlay} />
       <Dialog.Content className={content}>
@@ -20,5 +22,5 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
         {children}
       </Dialog.Content>
     </Dialog.Root>
-  );
+  , document.body.querySelector('#portal') ?? document.body);
 };
