@@ -69,6 +69,15 @@ export const optionCard = recipe({
     flexDirection: "column",
     alignItems: "start",
     gap: "12px",
+
+    "@media": {
+      "(hover)": {
+        ":hover": {
+          transform: "scale(1.05)",
+          transition: "transform 0.2s ease-in",
+        },
+      },
+    },
   },
   variants: {
     selected: {

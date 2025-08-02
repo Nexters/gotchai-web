@@ -26,6 +26,15 @@ export const button = recipe({
       cursor: "not-allowed",
       pointerEvents: "none",
     },
+
+    "@media": {
+      "(hover: none)": {
+        ":active": {
+          transform: "scale(0.95)",
+          transition: "transform 0.2s ease-in",
+        },
+      },
+    },
   },
 
   variants: {
