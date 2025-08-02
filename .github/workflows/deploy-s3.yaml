@@ -1,0 +1,55 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: ["main"]
+
+# JOB에서 사용할 환경 변수 설정
+env:
+  AWS_REGION: ap-northeast-2
+  S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET }}
+  CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 1. Node.js 설정 및 pnpm 설치
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      # 2. pnpm 설치
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.5.0
+
+      # 3. 의존성 설치
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 4. 빌드
+      - name: Build
+        run: pnpm build
+
+      # 5. AWS 인증 정보 설정
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      # 6. S3 버킷으로 빌드 결과물 배포
+      - name: Deploy to S3
+        run: aws s3 sync ./apps/web/dist s3://${{ env.S3_BUCKET_NAME }} --delete
+
+      # 7. CloudFront 캐시 무효화
+      - name: Invalidate CloudFront Cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
