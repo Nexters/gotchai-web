@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { COLORS } from "@gotchai/ui";
 
 export const modalContent = style({
-  width: "100%",
+  minWidth: "320px",
   padding: "40px 24px 24px 24px",
   boxSizing: "border-box",
   display: "flex",

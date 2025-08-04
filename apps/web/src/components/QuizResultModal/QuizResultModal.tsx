@@ -12,7 +12,7 @@ import { Button, Text, Title } from "@gotchai/ui";
 
 export type QuizResultModalProps = HTMLAttributes<HTMLDivElement> & {
   isOpen: boolean;
-  icon: React.ReactNode;
+  isCorrect: boolean;
   title: string;
   onClose: () => void;
   onClickNext: () => void;
@@ -21,7 +21,7 @@ export type QuizResultModalProps = HTMLAttributes<HTMLDivElement> & {
 
 export const QuizResultModal = ({
   isOpen,
-  icon,
+  isCorrect,
   title,
   answer,
   onClose,
@@ -30,7 +30,13 @@ export const QuizResultModal = ({
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className={modalContent}>
-        <div className={iconContainer}>{icon}</div>
+        <div className={iconContainer}>
+          {isCorrect ? (
+            <img src="/assets/quiz-correct.png" alt="correct" />
+          ) : (
+            <img src="/assets/quiz-wrong.png" alt="wrong" />
+          )}
+        </div>
         <div className={titleContainer}>
           <Title order={5} color={COLORS.gray[50]}>
             {title}

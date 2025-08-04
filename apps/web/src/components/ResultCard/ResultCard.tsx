@@ -11,7 +11,7 @@ import {
 } from "./style.css";
 import { CardResult, CARD_CONTENTS } from "./cardConfig";
 import { CONTENT_COLORS } from "./cardConfig";
-import Logo from "../../assets/svg/Logo";
+import Logo from "../Logo";
 
 interface CardProps {
   result: CardResult;
