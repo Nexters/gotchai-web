@@ -3,29 +3,6 @@ import { recipe } from "@vanilla-extract/recipes";
 import { COLORS } from "@gotchai/ui";
 import { hexToRgba } from "@gotchai/ui";
 
-export const quizContainer = style({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  boxSizing: "border-box",
-  maxWidth: 420,
-  width: "100%",
-  justifySelf: "center",
-  height: "100dvh",
-  padding: "20px",
-
-  gap: "24px",
-  color: COLORS.white,
-  overflow: "hidden",
-});
-
-export const quizContent = style({
-  display: "flex",
-  flexDirection: "column",
-  gap: "24px",
-});
-
 export const progressBadge = style({
   alignSelf: "center",
   padding: "8px 14px",
@@ -33,11 +10,11 @@ export const progressBadge = style({
 });
 
 export const questionContainer = style({
-  flex: 1,
   display: "flex",
   flexDirection: "column",
   gap: "32px",
   justifyContent: "center",
+  width: "100%",
 });
 
 export const questionText = style({
@@ -128,6 +105,7 @@ export const optionBadge = recipe({
     selected: true,
   },
 });
+
 export const optionText = style({
   whiteSpace: "pre-line",
 });

@@ -49,7 +49,7 @@ const IntroContent = () => {
       </div>
       <div className={introFooter}>
         <Text className={introParticipant}>참여자 수 | 435명</Text>
-        <Button variant="filled" onClick={() => navigate("/quiz")}>
+        <Button variant="filled" onClick={() => navigate("/test")}>
           나는 얼마나 AI를 잘 찾을까?
         </Button>
       </div>
