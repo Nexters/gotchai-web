@@ -13,19 +13,15 @@ import { Button, Text, Title } from "@gotchai/ui";
 export type QuizResultModalProps = HTMLAttributes<HTMLDivElement> & {
   isOpen: boolean;
   isCorrect: boolean;
-  title: string;
   onClose: () => void;
-  onClickNext: () => void;
   answer: string;
 };
 
 export const QuizResultModal = ({
   isOpen,
   isCorrect,
-  title,
   answer,
   onClose,
-  onClickNext,
 }: QuizResultModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -39,7 +35,7 @@ export const QuizResultModal = ({
         </div>
         <div className={titleContainer}>
           <Title order={5} color={COLORS.gray[50]}>
-            {title}
+            {isCorrect ? "Ai를 찾아냈어요!" : "사람이 작성한 대답이에요"}
           </Title>
         </div>
         <div className={answerContainer}>
@@ -52,7 +48,7 @@ export const QuizResultModal = ({
           </Text>
         </div>
 
-        <Button variant="filled" onClick={onClickNext} className={nextButton}>
+        <Button variant="filled" onClick={onClose} className={nextButton}>
           다음
         </Button>
       </div>
