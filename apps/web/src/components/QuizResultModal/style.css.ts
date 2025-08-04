@@ -1,8 +1,20 @@
-import { style } from "@vanilla-extract/css";
+import { style, keyframes } from "@vanilla-extract/css";
 import { COLORS } from "@gotchai/ui";
 
+/* 모달 슬라이드 인 */
+const modalSlideIn = keyframes({
+  "0%": {
+    opacity: 0,
+    transform: "scale(0.9) translateY(20px)",
+  },
+  "100%": {
+    opacity: 1,
+    transform: "scale(1) translateY(0)",
+  },
+});
+
 export const modalContent = style({
-  minWidth: "320px",
+  width: "100%",
   padding: "40px 24px 24px 24px",
   boxSizing: "border-box",
   display: "flex",
@@ -13,6 +25,8 @@ export const modalContent = style({
   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
   opacity: 1,
   outline: "none",
+  transform: "scale(1)",
+  animation: `${modalSlideIn} 0.2s cubic-bezier(0.4, 0, 0.2, 1)`,
 });
 
 export const iconContainer = style({
