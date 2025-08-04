@@ -1,5 +1,5 @@
 import { useReducer, useCallback } from "react";
-import { GOLD_SCORE, SILVER_SCORE, QUIZZES } from "./constants";
+import { SCORES, QUIZZES } from "./constants";
 import { CardResult } from "../../components/ResultCard/cardConfig";
 
 interface TestState {
@@ -9,16 +9,13 @@ interface TestState {
   isCompleted: boolean;
 }
 
-type SelectOptionAction = { type: "SELECT_OPTION"; payload: string };
-type SubmitAnswerAction = { type: "SUBMIT_ANSWER" };
-type NextQuestionAction = { type: "NEXT_QUESTION" };
-type ResetTestAction = { type: "RESET_TEST" };
+type ActionType =
+  | "SELECT_OPTION"
+  | "SUBMIT_ANSWER"
+  | "NEXT_QUESTION"
+  | "RESET_TEST";
 
-type TestAction =
-  | SelectOptionAction
-  | SubmitAnswerAction
-  | NextQuestionAction
-  | ResetTestAction;
+type TestAction = { type: ActionType; payload?: string };
 
 const initialState: TestState = {
   currentQuestionIndex: 0,
@@ -42,7 +39,7 @@ export const useTest = ({ onTestEnd }: UseTestProps = {}) => {
           }
           return {
             ...state,
-            selectedOptionId: action.payload,
+            selectedOptionId: action.payload ?? null,
           };
 
         case "SUBMIT_ANSWER": {
@@ -50,11 +47,9 @@ export const useTest = ({ onTestEnd }: UseTestProps = {}) => {
             return state;
           }
 
-          const currentQuestion = QUIZZES[state.currentQuestionIndex];
-          const selectedOption = currentQuestion.options.find(
-            (option) => option.id === state.selectedOptionId
-          );
-          const isCorrect = selectedOption?.id === currentQuestion.answer;
+          const isCorrect =
+            state.selectedOptionId ===
+            QUIZZES[state.currentQuestionIndex].answer;
 
           return {
             ...state,
@@ -73,9 +68,9 @@ export const useTest = ({ onTestEnd }: UseTestProps = {}) => {
             const correctCount = state.correctAnswers;
             let result: CardResult;
 
-            if (correctCount >= GOLD_SCORE) {
+            if (correctCount >= SCORES.GOLD_SCORE) {
               result = CardResult.GOLD;
-            } else if (correctCount >= SILVER_SCORE) {
+            } else if (correctCount >= SCORES.SILVER_SCORE) {
               result = CardResult.SILVER;
             } else {
               result = CardResult.BRONZE;
@@ -110,14 +105,11 @@ export const useTest = ({ onTestEnd }: UseTestProps = {}) => {
   const currentQuestion = QUIZZES[state.currentQuestionIndex];
   const isLastQuestion = state.currentQuestionIndex === QUIZZES.length - 1;
 
-  const selectedOption = currentQuestion.options.find(
-    (option) => option.id === state.selectedOptionId
-  );
   const correctOption = currentQuestion.options.find(
     (option) => option.id === currentQuestion.answer
   );
-  const isCorrect = selectedOption?.id === currentQuestion.answer;
 
+  const isCorrect = state.selectedOptionId === currentQuestion.answer;
   const handleOptionSelect = (optionId: string) => {
     dispatch({ type: "SELECT_OPTION", payload: optionId });
   };
@@ -138,10 +130,9 @@ export const useTest = ({ onTestEnd }: UseTestProps = {}) => {
     correctAnswers: state.correctAnswers,
     isCompleted: state.isCompleted,
     isLastQuestion,
-    selectedOption,
     correctOption,
     isCorrect,
-    totalQuestions: QUIZZES.length,
+    totalQuestionLength: QUIZZES.length,
 
     // 액션
     handleOptionSelect,
