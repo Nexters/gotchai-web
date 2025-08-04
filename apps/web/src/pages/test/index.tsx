@@ -26,9 +26,9 @@ export const TestPage = () => {
     currentQuestion,
     currentQuestionIndex,
     selectedOptionId,
-    correctOption,
+    totalQuestionLength,
     isCorrect,
-    totalQuestions,
+    correctOption,
     handleOptionSelect,
     handleSubmit,
     handleNextQuestion,
@@ -40,25 +40,18 @@ export const TestPage = () => {
     handleOptionSelect(optionId);
     handleSubmit();
 
-    //0.3초 -> 0.1초로 줄임
-    setTimeout(() => {
-      setIsQuizResultModalOpen(true);
-    }, 100);
+    setIsQuizResultModalOpen(true);
   };
 
   const handleModalClose = () => {
     setIsQuizResultModalOpen(false);
-  };
-
-  const handleModalNext = () => {
-    handleModalClose();
     handleNextQuestion();
   };
 
   return (
     <Layout hideLogo>
       <Chip color="green" className={progressBadge}>
-        {currentQuestionIndex + 1}/{totalQuestions}
+        {currentQuestionIndex + 1}/{totalQuestionLength}
       </Chip>
       <div className={questionContainer}>
         <div className={questionText}>
@@ -108,9 +101,7 @@ export const TestPage = () => {
       <QuizResultModal
         isOpen={isQuizResultModalOpen}
         onClose={handleModalClose}
-        onClickNext={handleModalNext}
         isCorrect={isCorrect}
-        title={isCorrect ? "Ai를 찾아냈어요!" : "사람이 작성한 대답이에요"}
         answer={correctOption?.text || ""}
       />
     </Layout>

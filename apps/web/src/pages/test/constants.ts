@@ -118,6 +118,8 @@ export const QUIZZES: Quiz[] = [
   },
 ];
 
-export const GOLD_SCORE = 6;
-export const SILVER_SCORE = 3;
-export const BRONZE_SCORE = 1;
+export const SCORES = {
+  GOLD_SCORE: 6,
+  SILVER_SCORE: 3,
+  BRONZE_SCORE: 1,
+};
