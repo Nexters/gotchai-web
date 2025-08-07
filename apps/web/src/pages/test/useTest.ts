@@ -68,9 +68,9 @@ export const useTest = ({ onTestEnd }: UseTestProps = {}) => {
             const correctCount = state.correctAnswers;
             let result: CardResult;
 
-            if (correctCount >= SCORES.GOLD_SCORE) {
+            if (correctCount >= SCORES.GOLD) {
               result = CardResult.GOLD;
-            } else if (correctCount >= SCORES.SILVER_SCORE) {
+            } else if (correctCount >= SCORES.SILVER) {
               result = CardResult.SILVER;
             } else {
               result = CardResult.BRONZE;

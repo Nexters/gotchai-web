@@ -119,7 +119,7 @@ export const QUIZZES: Quiz[] = [
 ];
 
 export const SCORES = {
-  GOLD_SCORE: 6,
-  SILVER_SCORE: 3,
-  BRONZE_SCORE: 1,
+  GOLD: 6,
+  SILVER: 3,
+  BRONZE: 1,
 };
