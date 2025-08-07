@@ -70,3 +70,8 @@ export const buttonContainer = style({
 export const nextButton = style({
   marginTop: "32px",
 });
+
+export const answerText = style({
+  textAlign: "start",
+  whiteSpace: "pre-wrap",
+});

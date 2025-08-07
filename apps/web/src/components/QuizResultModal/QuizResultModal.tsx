@@ -6,6 +6,7 @@ import {
   titleContainer,
   divider,
   nextButton,
+  answerText,
 } from "./style.css";
 import { COLORS, Modal } from "@gotchai/ui";
 import { Button, Text, Title } from "@gotchai/ui";
@@ -43,7 +44,12 @@ export const QuizResultModal = ({
             정답 공개
           </Text>
           <div className={divider} />
-          <Text size="xl" color={COLORS.white} weight="medium">
+          <Text
+            size="xl"
+            color={COLORS.white}
+            weight="medium"
+            className={answerText}
+          >
             {answer}
           </Text>
         </div>
