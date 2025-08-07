@@ -21,6 +21,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
         </Dialog.Description>
         {children}
       </Dialog.Content>
-    </Dialog.Root>
-  , document.body.querySelector('#portal') ?? document.body);
+    </Dialog.Root>,
+    document.body.querySelector("#portal") ?? document.body
+  );
 };

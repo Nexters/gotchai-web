@@ -6,34 +6,37 @@ import {
   titleContainer,
   divider,
   nextButton,
+  answerText,
 } from "./style.css";
 import { COLORS, Modal } from "@gotchai/ui";
 import { Button, Text, Title } from "@gotchai/ui";
 
 export type QuizResultModalProps = HTMLAttributes<HTMLDivElement> & {
   isOpen: boolean;
-  icon: React.ReactNode;
-  title: string;
+  isCorrect: boolean;
   onClose: () => void;
-  onClickNext: () => void;
   answer: string;
 };
 
 export const QuizResultModal = ({
   isOpen,
-  icon,
-  title,
+  isCorrect,
   answer,
   onClose,
-  onClickNext,
 }: QuizResultModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className={modalContent}>
-        <div className={iconContainer}>{icon}</div>
+        <div className={iconContainer}>
+          {isCorrect ? (
+            <img src="/assets/quiz-correct.png" alt="correct" />
+          ) : (
+            <img src="/assets/quiz-wrong.png" alt="wrong" />
+          )}
+        </div>
         <div className={titleContainer}>
           <Title order={5} color={COLORS.gray[50]}>
-            {title}
+            {isCorrect ? "Ai를 찾아냈어요!" : "사람이 작성한 대답이에요"}
           </Title>
         </div>
         <div className={answerContainer}>
@@ -41,12 +44,17 @@ export const QuizResultModal = ({
             정답 공개
           </Text>
           <div className={divider} />
-          <Text size="xl" color={COLORS.white} weight="medium">
+          <Text
+            size="xl"
+            color={COLORS.white}
+            weight="medium"
+            className={answerText}
+          >
             {answer}
           </Text>
         </div>
 
-        <Button variant="filled" onClick={onClickNext} className={nextButton}>
+        <Button variant="filled" onClick={onClose} className={nextButton}>
           다음
         </Button>
       </div>
