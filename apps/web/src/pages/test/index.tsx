@@ -14,12 +14,18 @@ import { QuizResultModal } from "../../components/QuizResultModal/QuizResultModa
 import { useNavigate } from "react-router-dom";
 import { CardResult } from "../../components/ResultCard/cardConfig";
 import { Layout } from "../../components/Layout/Layout";
+import { Loading } from "../../components/Loading/Loading";
 
 export const TestPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const onTestEnd = (result: CardResult) => {
-    navigate(`/result?type=${result}`);
+    setIsLoading(true);
+
+    setTimeout(() => {
+      navigate(`/result?type=${result}`);
+    }, 4_000);
   };
 
   const {
@@ -47,6 +53,14 @@ export const TestPage = () => {
     setIsQuizResultModalOpen(false);
     handleNextQuestion();
   };
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <Loading />
+      </Layout>
+    );
+  }
 
   return (
     <Layout hideLogo>
