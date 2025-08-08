@@ -5,7 +5,7 @@ import { Layout } from "../../components/Layout/Layout";
 import { ResultCard } from "../../components/ResultCard/ResultCard";
 import { CardResult } from "../../components/ResultCard/cardConfig";
 import { container, downloadSection, buttonContainer } from "./style.css";
-
+import { URLS } from "../../constants/urls";
 const getValidResult = (type: string | null): CardResult | null => {
   const validTypes = Object.values(CardResult).find((result) =>
     result.toLocaleLowerCase().includes(type?.toLocaleLowerCase() ?? "")
@@ -22,7 +22,7 @@ export const ResultPage = () => {
   const result = getValidResult(searchParams.get("type"));
 
   const handleClickReTry = () => {
-    navigate("/test");
+    navigate(URLS.TEST);
   };
 
   const handleClickDownload = () => {

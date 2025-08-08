@@ -11,6 +11,7 @@ import {
   introParticipant,
   introTitle,
 } from "./style.css";
+import { URLS } from "../../constants/urls";
 
 export const IntroPage = () => {
   return (
@@ -49,7 +50,7 @@ const IntroContent = () => {
       </div>
       <div className={introFooter}>
         <Text className={introParticipant}>참여자 수 | 435명</Text>
-        <Button variant="filled" onClick={() => navigate("/test")}>
+        <Button variant="filled" onClick={() => navigate(URLS.TEST)}>
           나는 얼마나 AI를 잘 찾을까?
         </Button>
       </div>
