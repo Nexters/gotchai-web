@@ -53,5 +53,5 @@ export const textOutline = style({
   maskPosition: "0% 0px",
   WebkitMaskRepeat: "no-repeat",
   maskRepeat: "no-repeat",
-  animation: `${textMaskAnimation} 3s ease-in-out infinite`,
+  animation: `${textMaskAnimation} 2s ease-in-out infinite`,
 });

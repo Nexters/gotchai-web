@@ -10,7 +10,7 @@ export const toast = style({
   backgroundColor: COLOR_VARS.gray[800],
   padding: "16px 20px",
   borderRadius: 16,
-  margin: 0,
+  margin: "0 auto",
 
   ...media.mobile({
     borderRadius: 40,
