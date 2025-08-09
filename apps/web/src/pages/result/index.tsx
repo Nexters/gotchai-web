@@ -26,7 +26,7 @@ export const ResultPage = () => {
   const result = getValidResult(searchParams.get("type"));
 
   const handleClickReTry = () => {
-    navigate(URLS.TEST);
+    navigate(URLS.MAIN);
   };
 
   const handleClickDownload = async () => {
