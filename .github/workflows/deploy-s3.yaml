@@ -48,7 +48,7 @@ jobs:
 
       # 6. S3 버킷으로 빌드 결과물 배포
       - name: Deploy to S3
-        run: aws s3 sync ./apps/web/dist s3://${{ env.S3_BUCKET_NAME }} --delete
+        run: aws s3 sync ./apps/web/dist s3://${{ env.S3_BUCKET_NAME }} --delete --cache-control "max-age=31536000,public"
 
       # 7. CloudFront 캐시 무효화
       - name: Invalidate CloudFront Cache
