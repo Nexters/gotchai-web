@@ -4,3 +4,4 @@ export * from "./Text";
 export * from "./Chip";
 export * from "./Toast";
 export * from "./Modal";
+export * from "./Icon";
