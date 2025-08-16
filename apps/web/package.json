@@ -15,6 +15,7 @@
     "@vanilla-extract/recipes": "catalog:",
     "es-toolkit": "^1.39.8",
     "html2canvas": "^1.4.1",
+    "lottie-react": "^2.4.1",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
     "react-router-dom": "^7.7.1"
