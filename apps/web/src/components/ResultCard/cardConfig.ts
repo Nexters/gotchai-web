@@ -50,3 +50,30 @@ export const CONTENT_COLORS: Record<CardResult, { subTitle: Hex; title: Hex }> =
       title: "#FFC289",
     },
   };
+
+export const RESULT_CARD_BACKGROUND_COLORS: Record<
+  CardResult,
+  { top: Hex; top2: Hex; top3: Hex; top4: Hex; top5: Hex }
+> = {
+  [CardResult.GOLD]: {
+    top: "#615920",
+    top2: "#433F21",
+    top3: "#373521",
+    top4: "#2B2A22",
+    top5: "#1D1E22",
+  },
+  [CardResult.SILVER]: {
+    top: "#37424E",
+    top2: "#2F3741",
+    top3: "#2B313A",
+    top4: "#25282F",
+    top5: "#1D1E22",
+  },
+  [CardResult.BRONZE]: {
+    top: "#664F32",
+    top2: "#4F402D",
+    top3: "#3F352A",
+    top4: "#272524",
+    top5: "#1D1E22",
+  },
+};
