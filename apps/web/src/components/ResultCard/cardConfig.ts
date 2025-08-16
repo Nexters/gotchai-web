@@ -77,3 +77,8 @@ export const RESULT_CARD_BACKGROUND_COLORS: Record<
     top5: "#1D1E22",
   },
 };
+
+export const RESULT_CARD_IMAGE_SIZE = {
+  width: 434,
+  height: 722,
+};

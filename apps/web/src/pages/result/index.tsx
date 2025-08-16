@@ -8,6 +8,7 @@ import { ResultCard } from "../../components/ResultCard/ResultCard";
 import {
   CardResult,
   RESULT_CARD_BACKGROUND_COLORS,
+  RESULT_CARD_IMAGE_SIZE,
 } from "../../components/ResultCard/cardConfig";
 import { container, downloadSection, buttonContainer } from "./style.css";
 import { URLS } from "../../constants/urls";
@@ -52,12 +53,17 @@ export const ResultPage = () => {
       const finalCtx = finalCanvas.getContext("2d");
 
       // 최종 캔버스 크기 설정 (카드와 동일한 크기)
-      finalCanvas.width = 868;
-      finalCanvas.height = 1444;
+      finalCanvas.width = RESULT_CARD_IMAGE_SIZE.width * 2;
+      finalCanvas.height = RESULT_CARD_IMAGE_SIZE.height * 2;
 
       if (finalCtx) {
         // 상→하 LinearGradient 배경 그리기
-        const gradient = finalCtx.createLinearGradient(0, 0, 0, 1444);
+        const gradient = finalCtx.createLinearGradient(
+          0,
+          0,
+          0,
+          RESULT_CARD_IMAGE_SIZE.height * 2
+        );
         gradient.addColorStop(0, RESULT_CARD_BACKGROUND_COLORS[result].top);
         gradient.addColorStop(0.1, RESULT_CARD_BACKGROUND_COLORS[result].top2);
         gradient.addColorStop(0.16, RESULT_CARD_BACKGROUND_COLORS[result].top3);
@@ -65,7 +71,12 @@ export const ResultPage = () => {
         gradient.addColorStop(0.62, RESULT_CARD_BACKGROUND_COLORS[result].top5);
 
         finalCtx.fillStyle = gradient;
-        finalCtx.fillRect(0, 0, 868, 1444);
+        finalCtx.fillRect(
+          0,
+          0,
+          RESULT_CARD_IMAGE_SIZE.width * 2,
+          RESULT_CARD_IMAGE_SIZE.height * 2
+        );
 
         // ResultCard를 (0,0) 위치에 그리기 (크기가 동일하므로)
         finalCtx.drawImage(canvas, 112, 290);
