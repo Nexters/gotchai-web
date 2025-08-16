@@ -76,18 +76,31 @@ export const cardContent = style({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  gap: 36,
   justifyContent: "center",
   position: "relative",
   zIndex: 3,
 });
 
+export const cardContentContainer = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: 8,
+  alignItems: "center",
+  justifyContent: "center",
+});
+
 export const cardImage = style({
-  width: "213px",
-  height: "213px",
-  borderRadius: "50%",
-  marginTop: "26px",
-  marginBottom: "26px",
+  width: "231px",
+  height: "231px",
   objectFit: "cover",
+});
+
+export const cardTextContent = style({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
 });
 
 export const cardText = style({
@@ -97,10 +110,11 @@ export const cardText = style({
   color: hexToRgba(COLORS.white, 0.7),
 });
 
-export const cardLogo = style({
-  width: "56px",
-  height: "11px",
-  marginTop: "9px",
+export const cardLogoContainer = style({
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 });
 
 export type CardRadialGradientVariants = RecipeVariants<
