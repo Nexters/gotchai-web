@@ -20,18 +20,18 @@ export const BACKGROUND_GRADIENTS: Record<string, Hex> = {
 export const CARD_CONTENTS: Record<CardResult, CardContent> = {
   [CardResult.GOLD]: {
     subTitle: "모두 다맞춘",
-    title: "기계 사냥꾼",
+    title: "Ai 킬러",
     description: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
   },
   [CardResult.SILVER]: {
     subTitle: "충분히 잘하는",
-    title: "기계 사냥꾼",
-    description: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
+    title: "Ai 베테랑",
+    description: "웬만한 Ai는 속이려다\n뼈도 못 추릴 것 같아요",
   },
   [CardResult.BRONZE]: {
     subTitle: "노력이 필요한 당신은",
-    title: "기계 사냥꾼",
-    description: "AI가 지배하는 세상에서도\n생존력 만렙일 것 같아요",
+    title: "Ai 꿈나무",
+    description: "이제 막 Ai에 눈을 떴군요!\n가능성이 무궁무진해요",
   },
 };
 

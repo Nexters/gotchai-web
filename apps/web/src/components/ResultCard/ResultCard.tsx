@@ -15,14 +15,21 @@ import { CardResult, CARD_CONTENTS } from "./cardConfig";
 import { CONTENT_COLORS } from "./cardConfig";
 import Logo from "../Logo";
 import { forwardRef } from "react";
+import { QUIZZES } from "../../pages/test/constants";
 
 interface CardProps {
   result: CardResult;
+  correctCount: number;
 }
 
 export const ResultCard = forwardRef<HTMLDivElement, CardProps>(
-  ({ result }, ref) => {
+  ({ result, correctCount }, ref) => {
+    // 동적 이미지 소스 설정
     const imageSrc = `/assets/${result}.png`;
+    // 동적 subTitle 생성
+    const dynamicSubTitle =
+      `${QUIZZES.length}개중 ${correctCount}개를 맞춘 당신은` ||
+      CARD_CONTENTS[result].subTitle;
 
     return (
       <div className={cardContainer} ref={ref}>
@@ -37,7 +44,7 @@ export const ResultCard = forwardRef<HTMLDivElement, CardProps>(
                 weight="medium"
                 color={CONTENT_COLORS[result].subTitle}
               >
-                {CARD_CONTENTS[result].subTitle}
+                {dynamicSubTitle}
               </Text>
               <Title order={3} color={CONTENT_COLORS[result].title}>
                 {CARD_CONTENTS[result].title}

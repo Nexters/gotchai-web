@@ -21,6 +21,11 @@ const getValidResult = (type: string | null): CardResult | null => {
   return validTypes ?? CardResult.BRONZE;
 };
 
+const getValidCorrectCount = (correctCount: string | null): number => {
+  const validCorrectCount = Number(correctCount);
+  return validCorrectCount ?? 0;
+};
+
 export const ResultPage = () => {
   const { showToast } = useToast();
   const navigate = useNavigate();
@@ -28,6 +33,7 @@ export const ResultPage = () => {
   const resultCardRef = useRef<HTMLDivElement>(null);
 
   const result = getValidResult(searchParams.get("type"));
+  const correctCount = getValidCorrectCount(searchParams.get("correct"));
 
   const handleClickReTry = () => {
     navigate(URLS.MAIN);
@@ -123,7 +129,11 @@ export const ResultPage = () => {
   return (
     <Layout>
       <div className={container}>
-        <ResultCard result={result as CardResult} ref={resultCardRef} />
+        <ResultCard
+          result={result as CardResult}
+          ref={resultCardRef}
+          correctCount={correctCount}
+        />
 
         <div className={downloadSection}>
           <Text color={COLOR_VARS.green[600]} size="lg" weight="medium">

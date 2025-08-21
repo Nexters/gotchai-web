@@ -21,11 +21,11 @@ export const TestPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  const onTestEnd = (result: CardResult) => {
+  const onTestEnd = (result: CardResult, correctCount: number) => {
     setIsLoading(true);
 
     setTimeout(() => {
-      navigate(URLS.RESULT(result));
+      navigate(URLS.RESULT(result, correctCount));
     }, 4_000);
   };
 
