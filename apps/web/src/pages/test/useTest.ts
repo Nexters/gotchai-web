@@ -25,7 +25,7 @@ const initialState: TestState = {
 };
 
 interface UseTestProps {
-  onTestEnd?: (result: CardResult) => void;
+  onTestEnd?: (result: CardResult, correctCount: number) => void;
 }
 
 export const useTest = ({ onTestEnd }: UseTestProps = {}) => {
@@ -76,7 +76,7 @@ export const useTest = ({ onTestEnd }: UseTestProps = {}) => {
               result = CardResult.BRONZE;
             }
 
-            onTestEnd?.(result);
+            onTestEnd?.(result, correctCount);
             return {
               ...state,
               isCompleted: true,
