@@ -119,7 +119,6 @@ export const ResultPage = () => {
           });
         } catch (error) {
           console.error("클립보드 저장 실패:", error);
-
           // 모바일에서 클립보드 저장 실패 시 이미지 다운로드로 대체
           try {
             const url = URL.createObjectURL(blob);
