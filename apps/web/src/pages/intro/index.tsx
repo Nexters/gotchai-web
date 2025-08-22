@@ -61,7 +61,7 @@ const IntroContent = () => {
 const IntroFooter = () => {
 	return (
 		<Copyable text={window.location.href}>
-			<Button variant="default" leftItem={<Icon.Save width={22} height={22} />}>
+			<Button variant="default" leftItem={<Icon.Share width={22} height={22} />}>
 				테스트 공유하기
 			</Button>
 		</Copyable>
