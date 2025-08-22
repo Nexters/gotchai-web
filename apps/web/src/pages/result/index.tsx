@@ -119,11 +119,32 @@ export const ResultPage = () => {
           });
         } catch (error) {
           console.error("클립보드 저장 실패:", error);
-          showToast({
-            data: {
-              message: "클립보드 저장에 실패했어요.",
-            },
-          });
+
+          // 모바일에서 클립보드 저장 실패 시 이미지 다운로드로 대체
+          try {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = `gotchai-result-${result.toLowerCase()}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            showToast({
+              data: {
+                icon: <Icon.Check />,
+                message: "이미지를 다운로드했어요.",
+              },
+            });
+          } catch (downloadError) {
+            console.error("이미지 다운로드 실패:", downloadError);
+            showToast({
+              data: {
+                message: "이미지 저장에 실패했어요.",
+              },
+            });
+          }
         }
       }, "image/png");
     } catch (error) {
