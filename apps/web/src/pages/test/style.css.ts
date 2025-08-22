@@ -7,12 +7,13 @@ export const progressBadge = style({
   alignSelf: "center",
   padding: "8px 14px",
   borderRadius: "10px",
+  marginBottom: "24px",
 });
 
 export const questionContainer = style({
   display: "flex",
   flexDirection: "column",
-  gap: "32px",
+  gap: "24px",
   justifyContent: "center",
   width: "100%",
 });
@@ -26,7 +27,6 @@ export const questionText = style({
 });
 
 export const optionsContainer = style({
-  marginTop: "24px",
   display: "flex",
   flexDirection: "column",
   gap: "20px",
