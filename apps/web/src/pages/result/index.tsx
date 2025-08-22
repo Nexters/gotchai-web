@@ -12,6 +12,7 @@ import {
 } from "../../components/ResultCard/cardConfig";
 import { container, downloadSection, buttonContainer } from "./style.css";
 import { URLS } from "../../constants/urls";
+import { useStoreLink } from "../../hooks/useStoreLink";
 
 const getValidResult = (type: string | null): CardResult | null => {
   const validTypes = Object.values(CardResult).find((result) =>
@@ -31,6 +32,10 @@ export const ResultPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const resultCardRef = useRef<HTMLDivElement>(null);
+  const { open } = useStoreLink(
+    "https://apps.apple.com/kr/app/gotchai-%EA%B0%93%EC%B1%A0-ai%EB%A5%BC-%EC%B0%BE%EC%95%84%EB%B4%90/id6749149135",
+    "https://play.google.com/store/apps/details?id=com.turing.gotchai&pli=1"
+  );
 
   const result = getValidResult(searchParams.get("type"));
   const correctCount = getValidCorrectCount(searchParams.get("correct"));
@@ -126,6 +131,10 @@ export const ResultPage = () => {
     }
   };
 
+  const handleClickAppDownload = () => {
+    open("store");
+  };
+
   return (
     <Layout>
       <div className={container}>
@@ -139,7 +148,7 @@ export const ResultPage = () => {
           <Text color={COLOR_VARS.green[600]} size="lg" weight="medium">
             앱에서도 계속 퀴즈를 풀어볼까요?
           </Text>
-          <Button variant="filled" disabled>
+          <Button variant="filled" onClick={handleClickAppDownload}>
             1분만에 다운로드하기
           </Button>
         </div>
